@@ -1,0 +1,93 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 10px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #f6f5ff;
+}
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+#side-menu {
+  flex: 1;
+}
+#main {
+  flex: 2;
+}
+
+#header-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+#header-info {
+  flex: 1;
+}
+h1 {
+  margin-bottom: 10px;
+}
+#myAvatar {
+  border-radius: 15%;
+  border: solid #fff;
+}
+
+p {
+  color: blue;
+}
+
+#motto {
+  text-align: right;
+  margin-top: 0;
+}
+#motto span {
+  font-weight: bold;
+}
+.favorit {
+  color: rgb(1, 1, 998);
+  font-weight: bold;
+  font-style: italic;
+}
+
+#top-menu-bar {
+  text-align: center;
+  background-color: hsl(210, 66%, 34%);
+  color: #fff;
+  margin: 0;
+}
+#top-menu-bar li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+#top-menu-bar a {
+  text-decoration: none;
+  padding: 0 15px;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1, 6rem;
+  margin-bottom: 1.6rem;
+  transition: 0.8s;
+}
+#top-menu-bar a:visited {
+  color: #fff;
+}
+#top-menu-bar a:hover {
+  color: hsl(210, 66%, 34%);
+  background: #fff;
+}
+
+.page {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px rgb(151 127 200 / 9%);
+  padding: 1.6rem;
+  margin: auto;
+  margin-bottom: 1.6rem;
+}
+.page h3 {
+  margin-top: 0;
+}
