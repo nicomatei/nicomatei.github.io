@@ -26,16 +26,16 @@
       </div>
 
       <ul id="top-menu-bar">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Languages</a></li>
+        <li><a href="#" onclick="showHomePage()">Home</a></li>
+        <li><a href="#" onclick="showSkillsPage()">Skills</a></li>
+        <li><a href="#" onclick="showProjectsPage()">Projects</a></li>
+        <li><a href="#" onclick="showLanguagesPage()">Languages</a></li>
       </ul>
     </header>
 
     <section id="content">
       <div id="side-menu">
-        <section class="page">
+        <section class="leftPage">
           <form action="" method="get">
             Email:
             <input
@@ -45,15 +45,36 @@
               required
               placeholder="email@example.com"
             />
-            <button type="submit">Contact me</button>
+            <button type="submit" style="background-color: rgb(0, 195, 255)">
+              Contact me
+            </button>
           </form>
         </section>
 
-        <section>M2</section>
+        <section class="leftPage">
+          <p style="text-align: center; color: black; font-weight: bold">
+            That's me at 6 years old:
+            <a
+              href="https://www.youtube.com/watch?v=ee7S_N28AlY"
+              style="color: blue"
+            >
+              Nicoleta Matei - Next Star</a
+            >
+            @ 2016
+          </p>
+        </section>
       </div>
       <div id="main">
-        <div class="page">
-          <h3>Skills</h3>
+        <div id="home" class="page">
+          <h2>Home</h2>
+          Hi! I'm Nico and I like to "play" on my laptop with HTML, CSS and JS.
+          Usualy, I make projects and games on SCRATCH, a web-site where you can
+          create your games. I like Js Language, and I want to learn it. This is
+          my CV (my web site); I make it... and I like it!
+        </div>
+
+        <div id="skills" class="page">
+          <h2>Skills</h2>
           <ul>
             <li>Html</li>
             <li class="favorit">Css</li>
@@ -61,8 +82,12 @@
           </ul>
         </div>
 
-        <div class="page">
-          <h3>Known Languages</h3>
+        <div id="projects" class="page">
+          <h2>Projects</h2>
+        </div>
+
+        <div id="languages" class="page">
+          <h2>Known Languages</h2>
 
           <table border="1">
             <tr>
@@ -85,17 +110,15 @@
         </div>
       </div>
     </section>
-    <footer>
-      <p style="text-align: center; color: blue; font-weight: bold">
-        This is me at 6 years old:
-        <a
-          href="https://www.youtube.com/watch?v=ee7S_N28AlY"
-          style="text-align: center; color: deepskyblue"
-        >
-          Nicoleta Matei - Next Star</a
-        >
-        @ 2016
-      </p>
+    <footer
+      style="
+        text-align: center;
+        color: #fff;
+        background: rgb(0, 50, 145);
+        font-weight: bold;
+      "
+    >
+      <h3>Enjoy!</h3>
     </footer>
 
     <script src="index.js"></script>
