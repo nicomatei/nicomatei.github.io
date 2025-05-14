@@ -7,3 +7,7 @@ This is my CV created with HTML, CSS and a little bit of JS
 ## Live
 
 [nicomatei.github.io](https://nicomatei.github.io)
+
+## 📰 Developer notes
+
+Clrl + Shift + P - open - index.htmn

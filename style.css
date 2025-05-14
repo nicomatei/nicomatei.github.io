@@ -33,7 +33,7 @@ h1 {
   margin-bottom: 10px;
 }
 #myAvatar {
-  border-radius: 1rem 60%;
+  border-radius: 50%;
   border: solid #fff 5px;
   margin: 10px;
   box-shadow: 0 4px rgb(151 127 200 / 9%);
@@ -64,17 +64,18 @@ p {
   padding: 10px;
 }
 #top-menu-bar li {
-  display: inline;
+  display: inline-block;
   margin: 0;
-  padding: 5px;
+  /* padding: 5px; */
 }
 #top-menu-bar a {
+  display: inline-block;
   text-decoration: none;
   padding: 0 15px;
   color: #fff;
-  border-radius: 5%;
-  padding: 1, 6rem;
-  margin-bottom: 1.6rem;
+  border-radius: 15%;
+  padding: 6px 20px;
+  /* margin-bottom: 1.6rem; */
   transition: 0.8s;
 }
 #top-menu-bar a:visited {
@@ -83,11 +84,11 @@ p {
 #top-menu-bar a:hover {
   color: hsl(210, 83%, 38%);
   background: #fff;
-  padding: 4px 20px;
+  padding: 2px 20px;
 }
 #top-menu-bar a.active {
   color: hsl(210, 83%, 38%);
-  background: rgb(0, 235, 255);
+  background: hsl(234, 100%, 93%);
 }
 
 .page {
@@ -101,7 +102,7 @@ p {
 
 .leftPage {
   background-color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 4px;
   box-shadow: 0 4px rgb(151 127 200 / 9%);
   padding: 1.6rem;
   margin: 10px 5px 0 10px;
@@ -109,4 +110,8 @@ p {
 
 .page h2 {
   margin-top: 0;
+}
+
+.space {
+  padding: 5px 0 5px 0;
 }
