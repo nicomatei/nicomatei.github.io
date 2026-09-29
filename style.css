@@ -115,3 +115,19 @@ p {
 .space {
   padding: 5px 0 5px 0;
 }
+
+.rubik-face {
+  background-color: black;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  max-width: 200px;
+  padding: 4px;
+  grid-gap: 4px;
+}
+
+.rubik-face > div {
+  border: 1px solid black;
+  padding-top: 100%;
+  background-color: hsl(210, 83%, 38%);
+  border-radius: 0.2em;
+}
