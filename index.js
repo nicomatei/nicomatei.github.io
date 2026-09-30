@@ -93,3 +93,15 @@ function initEvents() {
 
 showPage(activePage);
 initEvents();
+
+// var skills = [
+//   { name: "HTML", endorsement: 3 },
+//   { name: "CSS", endorsement: 1 },
+//   { name: "JS", endorsement: 5 },
+// ];
+// var skillMapResult = skills.map(function (skill) {
+//   console.info("inside map", skill);
+//   return `<li>$skill.name} <span>(${skill.endorsement})</span></li>`;
+// });
+// //console.warn("skillMapResult", skillMapResult);
+// $("#skills ul").innerHTML = skillMapResult.join("");
