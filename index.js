@@ -91,9 +91,6 @@ function initEvents() {
     });
 }
 
-showPage(activePage);
-initEvents();
-
 // var skills = [
 //   { name: "HTML", endorsement: 3 },
 //   { name: "CSS", endorsement: 1 },
@@ -114,3 +111,13 @@ var skillMapResult = skills.map(function (skill) {
 });
 //console.warn("skillMapResult", skillMapResult);
 $("#skills ul").innerHTML = skillMapResult.join("");
+
+function sortSkillsByEndorsement(skills) {
+  return skills.sort(function (a, b) {
+    console.log(a, b);
+    return b.endorsement - a.endorsement;
+  });
+}
+
+showPage(activePage);
+initEvents();
