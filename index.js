@@ -117,10 +117,7 @@ const skillMapResult = skills.map(function (skill) {
 $("#skills ul").innerHTML = skillMapResult.join("");
 
 function sortSkillsByEndorsement(skills) {
-  return skills.sort(function (a, b) {
-    console.log(a, b);
-    return b.endorsement - a.endorsement;
-  });
+  return skills.sort((a, b) => b.endorcements - a.endorcements);
 }
 
 showPage(activePage);
