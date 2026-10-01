@@ -15,6 +15,10 @@ var jobTitle = "<span>Student @</span> FastTrackIT";
 
 var mottoElement = document.getElementById("motto");
 
+// var - variabila in general
+// const - variabila constanta
+// let - variabila care o modifici
+
 console.info(mottoElement);
 console.warn(mottoElement.innerHTML);
 
@@ -105,7 +109,7 @@ fetch("skills.json")
     printSkills(skills);
   });
 
-var skillMapResult = skills.map(function (skill) {
+const skillMapResult = skills.map(function (skill) {
   console.info("inside map", skill);
   return `<li>$skill.name} <span>(${skill.endorsement})</span></li>`;
 });
