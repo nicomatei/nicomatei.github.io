@@ -101,24 +101,24 @@ function initEvents() {
 //   { name: "JS", endorsement: 5 },
 // ];
 
-fetch("skills.json")
-  .then(function (response) {
-    console.info("done?", response);
-  })
-  .then(function (data) {
-    printSkills(skills);
-  });
+// fetch("skills.json")
+//   .then(function (response) {
+//     console.info("done?", response);
+//   })
+//   .then(function (data) {
+//     printSkills(skills);
+//   });
 
-const skillMapResult = skills.map(function (skill) {
-  console.info("inside map", skill);
-  return `<li>$skill.name} <span>(${skill.endorsement})</span></li>`;
-});
-//console.warn("skillMapResult", skillMapResult);
-$("#skills ul").innerHTML = skillMapResult.join("");
+// const skillMapResult = skills.map(function (skill) {
+//   console.info("inside map", skill);
+//   return `<li>$skill.name} <span>(${skill.endorsement})</span></li>`;
+// });
+// //console.warn("skillMapResult", skillMapResult);
+// $("#skills ul").innerHTML = skillMapResult.join("");
 
-function sortSkillsByEndorsement(skills) {
-  return skills.sort((a, b) => b.endorcements - a.endorcements);
-}
+// function sortSkillsByEndorsement(skills) {
+//   return skills.sort((a, b) => b.endorcements - a.endorcements);
+// }
 
 showPage(activePage);
 initEvents();
