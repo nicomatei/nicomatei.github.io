@@ -1,124 +1,73 @@
-// console.info(2);
-// console.debug(23 + 2);
-// console.warn(6 * 3 - 10);
-// console.error("started");
-//
-var myName = "Nicoleta";
-var age = 10;
-// console.info("My name is " + myName + ", I'm " + age + " years old.");
-var age = 11;
-// console.info("My name is " + myName + ", I'm " + age + " years old.");
-var age = 12;
-// console.info("My name is " + myName + ", I'm " + age + " years old.");
+const motto = document.querySelector("#motto");
 
-var jobTitle = "<span>Student @</span> FastTrackIT";
-
-var mottoElement = document.getElementById("motto");
-
-// var - variabila in general
-// const - variabila constanta
-// let - variabila care o modifici
-
-console.info(mottoElement);
-console.warn(mottoElement.innerHTML);
-
-mottoElement.innerHTML = mottoElement.innerHTML + " & " + jobTitle;
-
-// function hidePage() {
-//   document.getElementById("home").style.display = "none";
-// }
-
-// function showHomePage() {
-//   document.getElementById("languages").style.display = "none";
-//   document.getElementById("projects").style.display = "none";
-//   document.getElementById("skills").style.display = "none";
-//   document.getElementById("home").style.display = "block";
-// }
-
-// function showSkillsPage() {
-//   console.debug("show skills");
-//   hidePage("home");
-//   document.getElementById("projects").style.display = "none";
-//   document.getElementById("languages").style.display = "none";
-//   document.getElementById("skills").style.display = "block";
-// }
-
-// function showProjectsPage() {
-//   hidePage();
-//   document.getElementById("languages").style.display = "none";
-//   document.getElementById("skills").style.display = "none";
-//   document.getElementById("projects").style.display = "block";
-// }
-
-// function showLanguagesPage() {
-//   document.getElementById("projects").style.display = "none";
-//   document.getElementById("skills").style.display = "none";
-//   hidePage();
-//   document.getElementById("languages").style.display = "block";
-// }
-
-function hideAllPages() {
-  hide("home");
-  hide("skills");
-  hide("projects");
-  hide("languages");
-}
-var activePage = "home";
-
-function showPage(nextPage) {
-  hideAllPages();
-  show(nextPage);
-  console.warn("change", activePage, "to");
-  document
-    .querySelector(`a[data-page=${activePage}]`)
-    .classList.remove("active");
-  document.querySelector(`a[data-page=${nextPage}]`).classList.add("active");
-  activePage = nextPage;
+if (motto) {
+  const title = document.createElement("span");
+  title.textContent = "Student @";
+  motto.append(" & ", title, " FastTrackIT");
 }
 
-function hide(id) {
-  document.getElementById(id).style.display = "none";
-}
-function show(id) {
-  document.getElementById(id).style.display = "block";
-}
+const menu = document.querySelector("#top-menu-bar");
+const main = document.querySelector("#main");
 
-function initEvents() {
-  document
-    .getElementById("top-menu-bar")
-    .addEventListener("click", function (e) {
-      if (e.target.matches("a")) {
-        var id = e.target.getAttribute("data-page");
-        // console.warn("click on menu", id);
-        showPage(id);
+if (menu && main) {
+  function pageIdFromHash(hash) {
+    try {
+      return decodeURIComponent(hash.slice(1));
+    } catch {
+      return "";
+    }
+  }
+
+  function showPage(requestedPageId) {
+    const pages = [...main.querySelectorAll(".page[id]")];
+    const links = [...menu.querySelectorAll("a[href^='#']")];
+    const fallbackPage =
+      pages.find((page) =>
+        links.some((link) => pageIdFromHash(link.hash) === page.id),
+      ) || pages[0];
+    const activePage =
+      pages.find((page) => page.id === requestedPageId) || fallbackPage;
+
+    pages.forEach((page) => {
+      page.style.display = page === activePage ? "block" : "none";
+    });
+
+    links.forEach((link) => {
+      const isActive =
+        activePage && pageIdFromHash(link.hash) === activePage.id;
+      link.classList.toggle("active", Boolean(isActive));
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
       }
     });
+  }
+
+  menu.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href^='#']");
+
+    if (!link || !menu.contains(link)) {
+      return;
+    }
+
+    const pageId = pageIdFromHash(link.hash);
+    const pageExists = [...main.querySelectorAll(".page[id]")].some(
+      (page) => page.id === pageId,
+    );
+
+    if (!pageExists) {
+      event.preventDefault();
+      return;
+    }
+
+    showPage(pageId);
+  });
+
+  window.addEventListener("hashchange", () => {
+    showPage(pageIdFromHash(window.location.hash));
+  });
+
+  showPage(pageIdFromHash(window.location.hash));
 }
-
-// var skills = [
-//   { name: "HTML", endorsement: 3 },
-//   { name: "CSS", endorsement: 1 },
-//   { name: "JS", endorsement: 5 },
-// ];
-
-// fetch("skills.json")
-//   .then(function (response) {
-//     console.info("done?", response);
-//   })
-//   .then(function (data) {
-//     printSkills(skills);
-//   });
-
-// const skillMapResult = skills.map(function (skill) {
-//   console.info("inside map", skill);
-//   return `<li>$skill.name} <span>(${skill.endorsement})</span></li>`;
-// });
-// //console.warn("skillMapResult", skillMapResult);
-// $("#skills ul").innerHTML = skillMapResult.join("");
-
-// function sortSkillsByEndorsement(skills) {
-//   return skills.sort((a, b) => b.endorcements - a.endorcements);
-// }
-
-showPage(activePage);
-initEvents();
