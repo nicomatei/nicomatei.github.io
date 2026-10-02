@@ -1,11 +1,3 @@
-const motto = document.querySelector("#motto");
-
-if (motto) {
-  const title = document.createElement("span");
-  title.textContent = "Student @";
-  motto.append(" & ", title, " FastTrackIT");
-}
-
 const menu = document.querySelector("#top-menu-bar");
 const main = document.querySelector("#main");
 
