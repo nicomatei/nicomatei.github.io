@@ -7,35 +7,52 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background: #f6f5ff;
+  background: #f5f5f5;
 }
 #content {
-  flex: 1;
+  flex: 4;
   display: flex;
   flex-direction: row;
 }
 #side-menu {
   flex: 1;
+  padding: 10px 5px 5px 10px;
 }
 #main {
-  flex: 2;
+  flex: 4;
+  padding: 10px 10px 5px 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 #header-wrapper {
+  min-height: 120px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 #header-info {
   flex: 1;
-  margin: 0 10px 0 0;
+  padding: 10px;
 }
 h1 {
-  margin-bottom: 10px;
+  margin: 5px 0;
+}
+
+header {
+  background: linear-gradient(45deg, #0798ab99, transparent);
+  font-size: 1.2em;
 }
 #myAvatar {
   border-radius: 50%;
-  border: solid #fff 5px;
-  margin: 10px;
+  border: solid #fff 4px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin: 5px;
   box-shadow: 0 4px rgb(151 127 200 / 9%);
 }
 
@@ -44,8 +61,11 @@ p {
 }
 
 #motto {
-  text-align: right;
-  margin-top: 0;
+  color: #334455;
+  text-align: left;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 #motto span {
   font-weight: bold;
@@ -58,58 +78,65 @@ p {
 
 #top-menu-bar {
   text-align: center;
-  background-color: hsl(210, 66%, 34%);
+  background-color: #0798ab;
   color: #fff;
   margin: 0;
-  padding: 10px;
+  padding: 0;
 }
 #top-menu-bar li {
-  display: inline-block;
+  display: inline;
   margin: 0;
-  /* padding: 5px; */
+  padding: 0;
 }
 #top-menu-bar a {
   display: inline-block;
   text-decoration: none;
-  padding: 0 15px;
   color: #fff;
-  border-radius: 15%;
-  padding: 6px 20px;
-  /* margin-bottom: 1.6rem; */
-  transition: 0.8s;
+  padding: 5px 15px;
+  margin: 4px 0;
+  border-radius: 0.2em;
+  text-shadow: 1px 1px 1px #000;
+  transition: 0.5s;
 }
 #top-menu-bar a:visited {
   color: #fff;
 }
 #top-menu-bar a:hover {
-  color: hsl(210, 83%, 38%);
-  background: #fff;
-  padding: 2px 20px;
+  background-color: #057988;
 }
 #top-menu-bar a.active {
-  color: hsl(210, 83%, 38%);
-  background: hsl(234, 100%, 93%);
+  background-color: #055d6b77;
 }
 
 .page {
   display: none;
+  flex: 1;
   background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px rgb(151 127 200 / 9%);
-  padding: 1.6rem;
-  margin: 10px 10px 0 5px;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 15%),
+    0 2px 3px rgb(0 0 0 / 20%);
+  padding: 24px;
+  margin: 0 0 10px;
 }
 
 .leftPage {
   background-color: #fff;
-  border-radius: 4px;
-  box-shadow: 0 4px rgb(151 127 200 / 9%);
-  padding: 1.6rem;
-  margin: 10px 5px 0 10px;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px rgb(0 0 0 / 15%),
+    0 2px 3px rgb(0 0 0 / 20%);
+  padding: 10px;
+  margin: 0 0 10px;
 }
 
 .page h2 {
-  margin-top: 0;
+  margin: 0 0 10px;
+}
+
+.leftPage h2 {
+  margin: 0 0 10px;
+  color: #057988;
 }
 
 .space {
@@ -130,6 +157,84 @@ p {
   padding-top: 100%;
   background-color: hsl(210, 83%, 38%);
   border-radius: 0.2em;
+}
+
+#languages table {
+  width: 50%;
+  min-width: min(330px, 100%);
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+#languages table th {
+  background: #d1e7ea;
+}
+
+#languages table th,
+#languages table td {
+  border: 1px solid #0798ab;
+  padding: 5px;
+}
+
+button {
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid #0798ab;
+  background: transparent;
+  border-radius: 2px;
+  color: #1c2130;
+}
+
+button.primary-action {
+  background-color: #0798ab;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 3px;
+  border: 1px solid #343434;
+  padding: 3px 8px;
+}
+
+button.primary-action:hover {
+  background-color: #057988;
+}
+
+footer {
+  padding: 10px 10px 8px;
+  background-color: #057988;
+  color: #f5f5f5;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-weight: bold;
+}
+
+footer h3 {
+  margin: 0;
+  font-size: 1em;
+  padding: 2px 5px;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 1em;
+  }
+
+  header,
+  footer {
+    font-size: 1em;
+  }
+
+  #top-menu-bar a {
+    padding: 5px 10px;
+  }
+
+  #content {
+    flex-direction: column-reverse;
+  }
 }
 
 /* #skills li span {
